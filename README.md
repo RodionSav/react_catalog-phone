@@ -8,4 +8,4 @@ To use this template click `Use this template`
 
 `SCSS Preprocessor` - available to write your styles with modern style language
 
-- [DEMO LINK]_(https://rodionsav.github.io/react_catalog-phone-3/)
+- [DEMO LINK](https://rodionsav.github.io/react_catalog-phone-3/)
