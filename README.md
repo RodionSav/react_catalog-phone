@@ -7,11 +7,15 @@ This is my online store project that allows convenient selection of Apple produc
 1. **Prerequisites:**
    - Make sure you have [Node.js](https://nodejs.org/) installed (recommended version: 14.16.1).
    - Make sure you have [npm](https://www.npmjs.com/) installed (comes with Node.js).
+   - - **npm:** Make sure you have npm installed. npm comes bundled with Node.js, so if you have Node.js installed, npm should be available. You can check the version by running `npm -v` in your terminal.
 
 2. **Clone the repository:**
    ```bash
    git clone https://github.com/your-best-repository.git
    npm install
+   npm install react-router-dom
+   npm install lodash.debounce
+   npm install @reduxjs/toolkit
    npm start
   
 ## Dependencies
