@@ -1,7 +1,9 @@
 # React catalog products
 
 This is my online store project that allows convenient selection of Apple products based on price or novelty. Such a project is necessary for a company involved in selling products.
-
+There is working version of my project:
+- [DEMO LINK](https://rodionsav.github.io/react_catalog-phone/);
+The design for this project was inspired by [this_design](https://www.figma.com/file/uEetgWenSRxk9jgiym6Yzp/Phone-catalog-redesign?node-id=1%3A2&mode=dev);
 ## Installing
 
 1. **Prerequisites:**
@@ -28,6 +30,3 @@ This is my online store project that allows convenient selection of Apple produc
 * classnames: 2.3.1
 * node-sass: 4.14.1
 * react-scripts: 4.0.1
-
-
-- [DEMO LINK](https://rodionsav.github.io/react_catalog-phone/)
