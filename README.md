@@ -13,8 +13,9 @@ This is my online store project that allows convenient selection of Apple produc
    ```bash
    git clone https://github.com/your-best-repository.git
    npm install
+   npm install classnames
    npm install react-router-dom
-   npm install lodash.debounce
+   npm i --save lodash.debounce
    npm install @reduxjs/toolkit
    npm start
   
