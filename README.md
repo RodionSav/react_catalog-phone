@@ -37,11 +37,11 @@ The design for this project was inspired by [this design](https://www.figma.com/
 
 ### 1. Home Page
 
+#### Image Slider
+- Additionally, there's an image slider on the home page, offering a visually appealing display of various iPhone-related images.
+
 #### Featured iPhones Sliders
 - On the main page, you'll find two sliders showcasing featured iPhones. These sliders provide a quick glance at highlighted models, helping users discover the latest and most popular devices.
-
-#### Image Slider
-- Additionally, there's an image slider on the home page, offering a visually appealing display of various iPhone-related images. Explore this slider for captivating visuals related to the Apple ecosystem.
 
 ### 2. Catalog Page
 
