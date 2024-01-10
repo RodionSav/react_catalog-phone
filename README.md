@@ -69,7 +69,7 @@ The design for this project was inspired by [this design](https://www.figma.com/
 
 # Configuration
 
-Configure your project with the following options:
+Configure project with the following options:
 
 ## iPhone Search Filtering
 
@@ -77,13 +77,13 @@ Configure your project with the following options:
 Order results alphabetically for easy navigation.
 
 ### By Novelty
-Display the latest iPhone models at the top for users to quickly discover new releases.
+Order results by novelty for ease of navigation.
 
 ### By Price
-Allow users to sort and filter iPhones according to their budget.
+Order results by price for ease of navigation.
 
 ## Displaying the Number of iPhones per Page
 
-Choose from 4 to 16
-Give users the flexibility to customize the number of displayed iPhones per page according to their preferences.
+Choose from 4 to 16.
+Flexibility customize the number of displayed iPhones per page according to their preferences.
 
