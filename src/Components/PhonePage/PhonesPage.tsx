@@ -285,7 +285,6 @@ export const PhonesPage = () => {
       {perPage !== options[0].number && (
         <Pagination
           total={query ? proccesedProducts.length : products.length}
-          // total={proccesedProducts.length}
           perPage={perPage}
           currentPage={currentPage}
           onPageChange={handlePageChange}
