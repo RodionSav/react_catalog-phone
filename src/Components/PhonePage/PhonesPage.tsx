@@ -40,7 +40,6 @@ export const PhonesPage = () => {
   const [perPage, setPerPage] = useState(parseInt(perPageParams, 10));
   const [currentPage, setCurrentPage] = useState(1);
   const [sortProducts, setSortProducts] = useState(sortBy[0]);
-  const total = products.length;
   const [selectedOption, setSelectedOption] = useState<string>(value);
   const [isDropActive, setIsDropActive] = useState(false);
   const [isDropSortActive, setIsDropSortActive] = useState(false);
@@ -65,10 +64,10 @@ export const PhonesPage = () => {
     productsArray: Product[],
     currentQuery: string,
   ) => {
-    let filteredProducts = [...productsArray];
+    const filteredProducts = [...productsArray];
 
     if (currentQuery.trim()) {
-      filteredProducts = [...productsArray].filter(
+      return filteredProducts.filter(
         (product) => product.name.toLowerCase().includes(
           currentQuery.toLowerCase().trim(),
         ),
@@ -94,6 +93,10 @@ export const PhonesPage = () => {
   };
 
   const proccesedProducts = filterProducts(sortProducts, products, query);
+
+  const visibleProducts = proccesedProducts.slice(
+    (currentPage - 1) * perPage, currentPage * perPage,
+  );
 
   const handleSortChange = (sortType: string) => {
     setSearchParams(getSearchWith(
@@ -168,7 +171,7 @@ export const PhonesPage = () => {
               <div className="phones__list">
                 {loaded && <Loader />}
                 {!loaded && proccesedProducts.length > 0
-                && proccesedProducts.map((product: Product) => (
+                && visibleProducts.map((product: Product) => (
                   <ProductCard product={product} key={product.id} />
                 ))}
               </div>
@@ -277,16 +280,16 @@ export const PhonesPage = () => {
               </li>
             ))}
           </ul>
-          {!query && proccesedProducts.length > 0
-          && perPage !== options[0].number && (
-            <Pagination
-              total={total}
-              perPage={perPage}
-              currentPage={currentPage}
-              onPageChange={handlePageChange}
-            />
-          )}
         </div>
+      )}
+      {perPage !== options[0].number && (
+        <Pagination
+          total={query ? proccesedProducts.length : products.length}
+          // total={proccesedProducts.length}
+          perPage={perPage}
+          currentPage={currentPage}
+          onPageChange={handlePageChange}
+        />
       )}
     </div>
   );
