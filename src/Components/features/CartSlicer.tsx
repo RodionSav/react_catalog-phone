@@ -2,6 +2,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { Product } from '../../types/product';
 
 const storedCart = localStorage.getItem('cartProducts');
+const totalCarts = localStorage.getItem('totalCarts');
 
 type CartItem = Product & { quantity: number };
 
@@ -10,13 +11,20 @@ type CartState = {
   total: number,
 };
 
+const calculateTotal = (items: CartItem[]) => {
+  return items.reduce((total, item) => {
+    return total + item.quantity;
+  }, 0);
+};
+
 const cartState: CartState = {
   items: storedCart ? JSON.parse(storedCart) : [],
-  total: 0,
+  total: totalCarts ? JSON.parse(totalCarts) : 0,
 };
 
 const saveToLocalStorage = (state: CartState) => {
   localStorage.setItem('cartProducts', JSON.stringify(state.items));
+  localStorage.setItem('totalCarts', JSON.stringify(state.total));
 };
 
 export const cartProductsSlicer = createSlice({
@@ -28,6 +36,7 @@ export const cartProductsSlicer = createSlice({
         ...action.payload,
         quantity: 1,
       });
+      state.total = calculateTotal(state.items);
       saveToLocalStorage(state);
     },
     deleteCartProducts: (state, action: PayloadAction<string>) => {
@@ -36,6 +45,7 @@ export const cartProductsSlicer = createSlice({
       );
 
       state.items = updatedItems;
+      state.total = calculateTotal(state.items);
       saveToLocalStorage(state);
     },
     increaseQuantity: (state, action) => {
@@ -43,6 +53,7 @@ export const cartProductsSlicer = createSlice({
 
       if (foundItem) {
         foundItem.quantity += 1;
+        state.total = calculateTotal(state.items);
       }
 
       saveToLocalStorage(state);
@@ -52,6 +63,7 @@ export const cartProductsSlicer = createSlice({
 
       if (foundItem && foundItem.quantity > 0) {
         foundItem.quantity -= 1;
+        state.total = calculateTotal(state.items);
       }
 
       saveToLocalStorage(state);

@@ -2,7 +2,7 @@ import React, {
   useEffect, useMemo, useState,
 } from 'react';
 import {
-  Link, NavLink, useLocation, useParams,
+  NavLink, useLocation, useParams, useNavigate,
 } from 'react-router-dom';
 import cn from 'classnames';
 import { getSuggestedProducts } from '../../api/products';
@@ -18,6 +18,7 @@ import { Loader } from '../Loader/Loader';
 import * as actions from '../features/ProductsSlicer';
 
 export const ProductDetails = () => {
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const location = useLocation();
   const {
@@ -55,16 +56,17 @@ export const ProductDetails = () => {
       {!loaded && (
         <div className="product-details">
           <div className="product-details-container">
-            <BackLink text="Phones" />
+            <BackLink text="Phones" link="phones" />
             <div className="product-details-arrow" />
             <h1 className="product-details__subtitle">{`${productDetails?.name} (iMT9G2FS/A)`}</h1>
           </div>
-          <Link
+          <button
+            type="button"
             className="product-details-back"
-            to="/"
+            onClick={() => navigate(-1)}
           >
             Back
-          </Link>
+          </button>
           <h1 className="product-details__name">{`${productDetails?.name} (iMT9G2FS/A)`}</h1>
           <div className="product-details__mobile-container">
             <div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import './CartPage.scss';
+import { NavLink } from 'react-router-dom';
 import { Product } from '../../types/product';
 import { BASE_URL } from '../../utils/fetchClient';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
@@ -19,6 +20,7 @@ export const CartProduct: React.FC<Props> = ({ product }) => {
     price,
     id,
     quantity,
+    phoneId,
   } = product;
 
   const dispatch = useAppDispatch();
@@ -60,7 +62,11 @@ export const CartProduct: React.FC<Props> = ({ product }) => {
           className="cart__close"
           onClick={() => handleDeleteProduct(product)}
         />
-        <img className="cart__phone-img" src={`${BASE_URL}/${image}`} alt={image} />
+        <NavLink
+          to={`/phones/${phoneId}`}
+        >
+          <img className="cart__phone-img" src={`${BASE_URL}/${image}`} alt={image} />
+        </NavLink>
         <h1 className="cart__name">
           {`${name}`}
         </h1>

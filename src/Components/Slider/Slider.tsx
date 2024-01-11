@@ -1,5 +1,5 @@
 import './Slider.scss';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import cn from 'classnames';
 import slideImage1 from '../../Images/slider/slide1.svg';
 import slideImage2 from '../../Images/slider/slide22.png';
@@ -39,6 +39,14 @@ export const Slider = () => {
       setCurrentPage(prevCurrentPage => prevCurrentPage - 1);
     }
   };
+
+  useEffect(() => {
+    const autoSliderTimer = setInterval(() => {
+      nextButton();
+    }, 3000);
+
+    return () => clearInterval(autoSliderTimer);
+  }, [position, currentPage]);
 
   const handleClickPag = (index: number) => {
     setCurrentPage(index);

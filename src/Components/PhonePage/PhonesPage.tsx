@@ -177,7 +177,7 @@ export const PhonesPage = () => {
       )}
       {!query && (
         <div className="phones-container">
-          <BackLink text="Phones" />
+          <BackLink text="Phones" link="phones" />
           <h1 className="phones__title">Page with phones</h1>
           <h3 className="phones__subtitle">{`${products?.length} models`}</h3>
           <div className="phones__main-container">

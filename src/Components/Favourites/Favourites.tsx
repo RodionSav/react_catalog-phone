@@ -12,7 +12,7 @@ export const Favourites = () => {
 
   return (
     <div className="favourites">
-      <BackLink text="Favourites" />
+      <BackLink text="Favourites" link="favourites" />
       <h1 className="favourites__title">Favourites</h1>
       <h2 className="favourites__subtitle">{`${favouriteProducts.length} items`}</h2>
       <div className="favourites-container">

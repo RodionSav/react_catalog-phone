@@ -198,6 +198,9 @@
     font-size: 12px;
     text-decoration: none;
     margin-bottom: 16px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
 
     &::before {
       display: block;

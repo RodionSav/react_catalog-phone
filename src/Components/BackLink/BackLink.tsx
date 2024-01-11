@@ -4,10 +4,12 @@ import './backlink.scss';
 
 type Props = {
   text: string;
+  link: string | null;
 };
 
 export const BackLink: React.FC<Props> = ({
   text,
+  link,
 }) => {
   return (
     <div className="back">
@@ -16,7 +18,18 @@ export const BackLink: React.FC<Props> = ({
         to="/"
       />
       <div className="back-arrow" />
-      <h1 className="back__title">{text}</h1>
+      <h1 className="back__title">
+        {link ? (
+          <NavLink
+            to={`/${link}`}
+            className="back__title__link"
+          >
+            {text}
+          </NavLink>
+        ) : (
+          <>{text}</>
+        )}
+      </h1>
     </div>
   );
 };
