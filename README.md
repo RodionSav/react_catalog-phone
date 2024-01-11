@@ -17,10 +17,6 @@ The design for this project was inspired by [this design](https://www.figma.com/
    ```bash
    git clone https://github.com/your-best-repository.git
    npm install
-   npm install classnames
-   npm install react-router-dom
-   npm i --save lodash.debounce
-   npm install @reduxjs/toolkit
    npm start
   
 ## Dependencies
