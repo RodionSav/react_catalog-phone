@@ -18,16 +18,6 @@ The design for this project was inspired by [this design](https://www.figma.com/
    git clone https://github.com/your-best-repository.git
    npm install
    npm start
-  
-## Dependencies
-* node: 14.16.1
-* react: 17.0.2
-* redux: 7.2.8
-* redux Toolkit: 1.6.1
-* lodash-debounce: 4.0.8
-* classnames: 2.3.1
-* node-sass: 4.14.1
-* react-scripts: 4.0.1
 
 ## Usage Guide
 
@@ -62,24 +52,3 @@ The design for this project was inspired by [this design](https://www.figma.com/
 
 #### Seamless Navigation
 - Easily move between pages using the navigation links in the header. Whether you're exploring the catalog, managing favorites, or reviewing your shopping cart, the header ensures convenient navigation throughout the website.
-
-# Configuration
-
-Configure project with the following options:
-
-## iPhone Search Filtering
-
-### Alphabetically
-Order results alphabetically for easy navigation.
-
-### By Novelty
-Order results by novelty for ease of navigation.
-
-### By Price
-Order results by price for ease of navigation.
-
-## Displaying the Number of iPhones per Page
-
-Choose from 4 to 16.
-Flexibility customize the number of displayed iPhones per page according to their preferences.
-
