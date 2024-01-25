@@ -5,6 +5,15 @@ This is my online store project that allows convenient selection of Apple produc
 There is working version of my project:
 - [DEMO LINK](https://rodionsav.github.io/react_catalog-phone/)
 
+## Technologies
+
+- React
+- React-router-dom
+- Typescript
+- SCSS with BEM
+- Classnames
+- Redux
+
 The design for this project was inspired by [this design](https://www.figma.com/file/uEetgWenSRxk9jgiym6Yzp/Phone-catalog-redesign?node-id=1%3A2&mode=dev).
 ## Installing
 
